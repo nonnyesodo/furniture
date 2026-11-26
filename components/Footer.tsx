@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { footerContent, siteConfig } from "@/lib/content";
 import { trackEvent } from "@/lib/analytics";
+import SocialLinks from "./SocialLinks";
 
 export default function Footer() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -44,19 +45,11 @@ export default function Footer() {
             <p className="font-sans text-sm text-sand-200/80 max-w-sm leading-relaxed mb-6">
               {footerContent.tagline}
             </p>
-            <div className="flex items-center gap-5">
-              {footerContent.socials.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs uppercase tracking-widest text-sand-200/70 hover:text-oak-light transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-oak"
-                >
-                  {social.name}
-                </a>
-              ))}
-            </div>
+            <SocialLinks
+              socials={footerContent.socials}
+              variant="dark"
+              location="footer"
+            />
           </div>
 
           {/* Newsletter Box */}

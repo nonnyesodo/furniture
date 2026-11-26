@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { navigationLinks, siteConfig } from "@/lib/content";
 import { trackEvent } from "@/lib/analytics";
+import SocialLinks from "./SocialLinks";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -204,9 +205,16 @@ export default function Header() {
             Book a Showroom Visit
           </a>
           <div className="text-xs text-charcoal-muted space-y-1">
-            <p className="font-medium text-charcoal">{siteConfig.contact.address.street}</p>
+            <p className="font-medium text-charcoal">
+              {siteConfig.contact.address.street}, {siteConfig.contact.address.city}, {siteConfig.contact.address.country}
+            </p>
             <p>{siteConfig.contact.phone} · {siteConfig.contact.email}</p>
           </div>
+          <SocialLinks
+            socials={siteConfig.socials}
+            variant="light"
+            location="mobile_menu"
+          />
         </div>
       </div>
     </>

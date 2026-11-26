@@ -3,28 +3,95 @@
  * All editorial copy and site configuration in one central place.
  */
 
+export interface SocialLink {
+  id:
+    | "instagram"
+    | "facebook"
+    | "x"
+    | "linkedin"
+    | "pinterest"
+    | "tiktok"
+    | "youtube"
+    | "whatsapp";
+  name: string;
+  handle: string;
+  href: string;
+}
+
+export const socialLinks: SocialLink[] = [
+  {
+    id: "instagram",
+    name: "Instagram",
+    handle: "@maisonoak.ng",
+    href: "https://instagram.com/maisonoak.ng",
+  },
+  {
+    id: "facebook",
+    name: "Facebook",
+    handle: "Maison Oak Nigeria",
+    href: "https://facebook.com/maisonoakng",
+  },
+  {
+    id: "x",
+    name: "X",
+    handle: "@maisonoak_ng",
+    href: "https://x.com/maisonoak_ng",
+  },
+  {
+    id: "linkedin",
+    name: "LinkedIn",
+    handle: "Maison Oak Atelier",
+    href: "https://linkedin.com/company/maisonoak-ng",
+  },
+  {
+    id: "pinterest",
+    name: "Pinterest",
+    handle: "maisonoakng",
+    href: "https://pinterest.com/maisonoakng",
+  },
+  {
+    id: "tiktok",
+    name: "TikTok",
+    handle: "@maisonoak.ng",
+    href: "https://tiktok.com/@maisonoak.ng",
+  },
+  {
+    id: "youtube",
+    name: "YouTube",
+    handle: "Maison Oak Atelier",
+    href: "https://youtube.com/@maisonoakng",
+  },
+  {
+    id: "whatsapp",
+    name: "WhatsApp",
+    handle: "+234 809 555 0184",
+    href: "https://wa.me/2348095550184?text=Hello%20Maison%20Oak%2C%20I%20would%20like%20to%20inquire%20about%20your%20furniture%20collection.",
+  },
+];
+
 export const siteConfig = {
   name: "Maison Oak",
   legalName: "Maison Oak Furniture Atelier Ltd.",
   tagline: "Furniture made to be lived in.",
   description:
-    "Handcrafted furniture built from sustainably harvested European timbers and natural textiles. Designed for longevity, calm living, and generations of everyday rituals.",
+    "Handcrafted furniture built in Nigeria from sustainably harvested hardwoods, European white oak, and natural textiles. Designed for longevity, calm living, and generations of everyday rituals.",
   url: "https://maisonoak.com",
   ogImage: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&h=630&q=85",
+  socials: socialLinks,
   contact: {
     email: "concierge@maisonoak.com",
-    phone: "+1 (212) 555-0184",
+    phone: "+234 809 555 0184",
     address: {
-      street: "74 Mercer Street, Soho",
-      city: "New York",
-      region: "NY",
-      postalCode: "10012",
-      country: "United States",
-      mapUrl: "https://maps.google.com/?q=74+Mercer+Street+New+York+NY+10012",
+      street: "14 Adeola Odeku Street, Victoria Island",
+      city: "Lagos",
+      region: "LA",
+      postalCode: "101241",
+      country: "Nigeria",
+      mapUrl: "https://maps.google.com/?q=14+Adeola+Odeku+Street+Victoria+Island+Lagos+Nigeria",
     },
     hours: [
-      { days: "Tuesday – Saturday", time: "10:00 AM – 6:00 PM" },
-      { days: "Sunday", time: "11:00 AM – 5:00 PM" },
+      { days: "Tuesday – Saturday", time: "10:00 AM – 6:00 PM WAT" },
+      { days: "Sunday", time: "12:00 PM – 5:00 PM WAT" },
       { days: "Monday", time: "Private Appointments Only" },
     ],
   },
@@ -57,7 +124,7 @@ export const brandStatement = {
   eyebrow: "Our Philosophy",
   quote:
     "We believe true luxury is quiet, tactile, and made to endure. Every joint, grain, and contour is shaped by master artisans from sustainably harvested timbers—built not just for today's space, but for generations of living.",
-  attribution: "Maison Oak Atelier · Copenhagen & New York",
+  attribution: "Maison Oak Atelier · Victoria Island, Lagos",
 };
 
 export const editorialBandContent = {
@@ -105,26 +172,26 @@ export const testimonialsContent = {
     {
       id: "quote-1",
       quote:
-        "The Soren dining table has become the soulful center of our home. After two years of morning coffees, dinner parties, and kid craft projects, the oak has developed the most gorgeous subtle patina.",
-      author: "Elena Rostova",
-      role: "Architect",
-      city: "Stockholm",
+        "The Soren dining table has become the soulful center of our home. After two years of morning coffees, family dinners, and weekend gatherings, the oak has developed the most gorgeous subtle patina.",
+      author: "Tunde Bakare",
+      role: "Principal Architect",
+      city: "Lagos",
     },
     {
       id: "quote-2",
       quote:
         "As an interior designer, I am extremely demanding about timber joinery and upholstery lines. Maison Oak achieves the rare balance of architectural rigor and deeply comfortable living.",
-      author: "Marcus Vance",
+      author: "Amaka Okafor",
       role: "Interior Designer",
-      city: "New York",
+      city: "Abuja",
     },
     {
       id: "quote-3",
       quote:
         "The Arlo chair arrived impeccably finished. You can immediately feel the weight and silky touch of solid timber that was cared for by a true craftsperson. Truly heirloom quality.",
-      author: "Camille Laurent",
+      author: "Damilola Adeyemi",
       role: "Creative Director",
-      city: "Paris",
+      city: "Ikoyi, Lagos",
     },
   ],
 };
@@ -171,19 +238,15 @@ export const footerContent = {
         { label: "10-Year Warranty", href: "#craftsmanship" },
         { label: "Care & Timber Maintenance", href: "#craftsmanship" },
         { label: "concierge@maisonoak.com", href: "mailto:concierge@maisonoak.com" },
-        { label: "+1 (212) 555-0184", href: "tel:+12125550184" },
+        { label: "+234 809 555 0184", href: "tel:+2348095550184" },
       ],
     },
   ],
-  socials: [
-    { name: "Instagram", href: "https://instagram.com" },
-    { name: "Pinterest", href: "https://pinterest.com" },
-    { name: "Architizer", href: "https://architizer.com" },
-  ],
+  socials: socialLinks,
   legal: [
     { label: "Privacy Policy", href: "#" },
     { label: "Terms of Service", href: "#" },
     { label: "10-Year Warranty", href: "#" },
   ],
-  copyright: "© 2026 Maison Oak Furniture Atelier. All rights reserved.",
+  copyright: "© 2026 Maison Oak Furniture Atelier Ltd. Lagos, Nigeria. All rights reserved.",
 };

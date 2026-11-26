@@ -7,6 +7,7 @@ import Reveal from "./Reveal";
 import { images } from "@/lib/images";
 import { siteConfig, contactFormOptions } from "@/lib/content";
 import { trackEvent } from "@/lib/analytics";
+import SocialLinks from "./SocialLinks";
 
 interface FormData {
   name: string;
@@ -138,7 +139,7 @@ export default function ContactSection() {
               Experience the Craft
             </h2>
             <p className="font-sans text-base text-charcoal-muted leading-relaxed">
-              Visit our Mercer Street showroom to touch our oiled timbers and feel our wool bouclés in person, or request a private specification consultation.
+              Visit our Victoria Island showroom in Lagos to touch our oiled timbers and feel our wool bouclés in person, or request a private specification consultation.
             </p>
           </div>
         </Reveal>
@@ -167,7 +168,7 @@ export default function ContactSection() {
                   <div className="flex items-center gap-2 text-oak mb-2">
                     <MapPin size={18} />
                     <span className="text-xs uppercase tracking-widest font-semibold text-charcoal">
-                      SoHo Showroom & Atelier
+                      Victoria Island Showroom & Atelier
                     </span>
                   </div>
                   <p className="font-serif text-lg text-charcoal">
@@ -175,7 +176,7 @@ export default function ContactSection() {
                   </p>
                   <p className="font-sans text-sm text-charcoal-muted">
                     {siteConfig.contact.address.city}, {siteConfig.contact.address.region}{" "}
-                    {siteConfig.contact.address.postalCode}
+                    {siteConfig.contact.address.postalCode} · {siteConfig.contact.address.country}
                   </p>
                   <a
                     href={siteConfig.contact.address.mapUrl}
@@ -222,6 +223,18 @@ export default function ContactSection() {
                     <Mail size={15} className="text-oak" />
                     <span>{siteConfig.contact.email}</span>
                   </a>
+                </div>
+
+                {/* Social Channels */}
+                <div className="pt-4 border-t border-sand-200">
+                  <span className="text-[11px] uppercase tracking-widest font-semibold text-charcoal block mb-3">
+                    Connect &amp; Follow
+                  </span>
+                  <SocialLinks
+                    socials={siteConfig.socials}
+                    variant="light"
+                    location="contact_showroom"
+                  />
                 </div>
               </div>
             </Reveal>
@@ -287,7 +300,7 @@ export default function ContactSection() {
                         onChange={handleChange}
                         aria-invalid={Boolean(errors.name)}
                         aria-describedby={errors.name ? "name-error" : undefined}
-                        placeholder="e.g. Henrik Larsson"
+                        placeholder="e.g. Adewale Ogunleye"
                         className={`w-full px-4 py-3 bg-[#FAF8F5] border text-sm text-charcoal placeholder-charcoal-muted/60 transition-colors focus:bg-white focus:outline-none focus:ring-1 focus:ring-oak ${
                           errors.name ? "border-red-500" : "border-sand-200 focus:border-oak"
                         }`}
@@ -341,7 +354,7 @@ export default function ContactSection() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          placeholder="+1 (555) 000-0000"
+                          placeholder="+234 800 000 0000"
                           className="w-full px-4 py-3 bg-[#FAF8F5] border border-sand-200 text-sm text-charcoal placeholder-charcoal-muted/60 transition-colors focus:bg-white focus:border-oak focus:outline-none focus:ring-1 focus:ring-oak"
                         />
                       </div>

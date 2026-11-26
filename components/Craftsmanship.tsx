@@ -60,7 +60,7 @@ export default function Craftsmanship() {
                 />
                 <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-sm p-4 text-white text-xs font-sans">
                   <p className="font-serif text-sm tracking-wide text-white">Hand-Rubbed Finish</p>
-                  <p className="text-white/70">Solid European white oak dining plank, Copenhagen Atelier</p>
+                  <p className="text-white/70">Solid European white oak dining plank, Lagos Atelier</p>
                 </div>
               </div>
             </Reveal>

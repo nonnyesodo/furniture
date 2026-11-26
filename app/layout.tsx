@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { siteConfig } from "@/lib/content";
 import { images } from "@/lib/images";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const viewport: Viewport = {
   themeColor: "#FAF8F5",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
         alt: images.ogImage.alt,
       },
     ],
-    locale: "en_US",
+    locale: "en_NG",
     type: "website",
   },
   twitter: {
@@ -101,10 +102,9 @@ export default function RootLayout({
         "@id": `${siteConfig.url}/#organization`,
         name: siteConfig.name,
         url: siteConfig.url,
-        sameAs: [
-          "https://instagram.com/maisonoak",
-          "https://pinterest.com/maisonoak",
-        ],
+        sameAs: siteConfig.socials
+          .filter((social) => social.id !== "whatsapp")
+          .map((social) => social.href),
       },
     ],
   };
@@ -134,6 +134,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );

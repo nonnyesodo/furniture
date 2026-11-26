@@ -326,7 +326,7 @@ export default function FeaturedCollection() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-charcoal-muted uppercase tracking-wider">Origin</span>
-                    <span className="font-medium text-charcoal">Copenhagen Atelier</span>
+                    <span className="font-medium text-charcoal">Lagos Atelier, Nigeria</span>
                   </div>
                 </div>
               </div>
